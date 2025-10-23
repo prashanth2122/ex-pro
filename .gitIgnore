@@ -1,0 +1,49 @@
+# Node dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.test
+secrets.json
+credentials.json
+local.settings.json
+.local.env
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.jks
+*.keystore
+*.secret
+*.enc
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Build / output
+dist/
+build/
+out/
+coverage/
+.cache/
+.next/
+.nuxt/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
