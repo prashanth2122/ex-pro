@@ -102,7 +102,7 @@ jobs:
       # Update Kubernetes manifests with new image tag
       - name: Update image in Kubernetes manifests
         run: |
-          sed -i 's|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/node-backend:${{ github.sha }}|' k8s/deployment.yaml
+          sed -i 's|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/node-backend:${{ github.sha }}|' deployment.yaml
 
       # Apply Kubernetes manifests
       # - name: Deploy to Kubernetes
