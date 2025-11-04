@@ -102,12 +102,12 @@ jobs:
       # Update Kubernetes manifests with new image tag
       - name: Update image in Kubernetes manifests
         run: |
-          sed -i 's|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/node-backend:${{ github.sha }}|' deployment.yaml
+          sed -i 's|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/node-backend:${{ github.sha }}|' deployment.yml
 
       # Apply Kubernetes manifests
       # - name: Deploy to Kubernetes
       #   run: |
-      #     kubectl apply -f k8s/deployment.yaml
+      #     kubectl apply -f k8s/deployment.yml
       #     kubectl apply -f k8s/service.yaml
       #   env:
       #     KUBECONFIG: $HOME/.kube/config
@@ -136,7 +136,7 @@ jobs:
         with:
           namespace: default
           manifests: |
-            deployment.yaml
+            deployment.yml
             service.yaml
             ingress.yaml
           images: |
