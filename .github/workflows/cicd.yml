@@ -114,14 +114,22 @@ jobs:
 
       - name: Azure Login
         uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        run: |
+             az login --service-principal -u e7f5b9ea-ce9f-4085-8c16-7bcce6efff00 -p 9n68Q~szB2MG9uWo0KXi6MgjJDaGf5DcX1r5Gb4X --tenant f175b93b-a8d7-4857-87d9-230ad66665be
+
+        # with:
+        #   creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Get AKS Credentials
-        uses: azure/aks-set-context@v4
-        with:
-          resource-group: ${{ secrets.AKS_RESOURCE_GROUP }}
-          cluster-name: ${{ secrets.AKS_CLUSTER_NAME }}
+        run: |
+                 mkdir .kube/
+                 touch .kube/config
+                 az aks get-credentials --resource-group azure_testing --name backend
+          
+        # uses: azure/aks-set-context@v4
+        # with:
+        #   resource-group: ${{ secrets.AKS_RESOURCE_GROUP }}
+        #   cluster-name: ${{ secrets.AKS_CLUSTER_NAME }}
 
       - name: Deploy to AKS
         uses: azure/k8s-deploy@v5
