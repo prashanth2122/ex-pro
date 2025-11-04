@@ -113,7 +113,7 @@ jobs:
       #     KUBECONFIG: $HOME/.kube/config
 
       - name: Azure Login
-        uses: azure/login@v2
+        # uses: azure/login@v2
         run: |
              az login --service-principal -u e7f5b9ea-ce9f-4085-8c16-7bcce6efff00 -p ${{secrets.SECRET_VALUE}} --tenant f175b93b-a8d7-4857-87d9-230ad66665be
 
