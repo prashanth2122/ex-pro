@@ -17,7 +17,7 @@ app.use(cors({origin: '*'})); // Enable CORS for all origins
 
 const PORT = process.env.PORT || 3000;
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL || 'postgresql://postgres_admin:Atmecs@123@nodebackend-db.postgres.database.azure.com:5432/postgres',
+    connectionString: process.env.DATABASE_URL || 'postgresql://postgres_admin:Atmecs@123@nodebackend-db.postgres.database.azure.com:5432/postgres?sslmode=require',
     // For many managed PG services you may require SSL: uncomment next line if needed
     // ssl: { rejectUnauthorized: false },
 });
