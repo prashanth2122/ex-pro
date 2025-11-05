@@ -124,7 +124,7 @@ jobs:
         run: |
                  mkdir .kube/
                  touch .kube/config
-                 az aks get-credentials --resource-group azure_testing --name backend
+                 az aks get-credentials --resource-group azure_testing_1 --name backend_1
           
         # uses: azure/aks-set-context@v4
         # with:
